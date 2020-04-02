@@ -3,21 +3,17 @@
    <!-- <img alt="Vue logo" src="../assets/logo.png">-->
     <h1>E-WALLET</h1>
     <p>Active card</p>
-  <div class="bitcoin" ref="bitcoin" v-bind="changeCard">
-    <img class="chip" src="@/assets/chip-dark.svg">
-    <img class="bitcoin-logo" src="@/assets/vendor-bitcoin.svg">
-    <p class="card-number">1234 5435 4666 0931</p>
-    <p class="cardholder">cardholder name</p>
-  </div>
-  <div class="ninja" ref="ninja" @click="changeCard">
-    <p class="card-number"></p>
-  </div>
-  <div class="block-chain" @click="changeCard">
-    <p class="card-number"></p>
-  </div>
-  <!-- implement this code in evil-corp v-for="variant in cardVariants" :key="variant.variantCard" @click="changeCard"-->
-  <div class="evil-corp">
-    <p class="card-number">6666 6666 6666 6666</p>
+  <div class="container">
+    <div class="ninja" ref="ninja" @click="changeCard">
+      <p class="card-number"></p>
+    </div>
+    <div class="block-chain" @click="changeCard">
+      <p class="card-number"></p>
+    </div>
+    <!-- implement this code in evil-corp v-for="variant in cardVariants" :key="variant.variantCard" @click="changeCard"-->
+    <div class="evil-corp">
+      <p class="card-number">6666 6666 6666 6666</p>
+    </div>
   </div>
   <router-link to="/addcard">
     <button @click="addCard" class="add-card">
@@ -28,82 +24,36 @@
 </template>
 
 <script>
-/* import Card from '../components/Card'
-import CardStack from '../components/CardStack'
+import Card from '../components/Card'
+/* import CardStack from '../components/CardStack'
 import Top from '../components/Top' */
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  components: {},
-  name: 'CardStack',
+  name: 'Home',
+  components: {
+    Top,
+    Card,
+    CardStack
+  },
   props: {
     CardStack: Object
-  }
-  /* data: () => {
+  },
+  data: () => {
     return {
+      card: {},
+      Cards: []
     }
   },
-  Variants: [
-    {
-      variantCard: 'evil-corp'
-    },
-    {
-      variantCard: 'block-chain'
-    },
-    {
-      variantCard: 'ninja'
-    }
-  ],
   methods: {
-    changeCard() {
-      this.bitcoin = variantCard
-    },
-  } */
+    changeCard () {
+      this.bitcoin.$emit('variantCard1')
+    }
+  }
 }
 </script>
 <style scoped>
-*{
-  padding: 0;
-  box-sizing: border-box;
-}
-.bitcoin{
-  display: flex;
-  justify-content: center;
-  border-style: solid;
-  border-color: orange;
-  padding: 5%;
-  background-color: #FFAE34;
-  border-radius: 8px;
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-bottom: 10%;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-}
-.bitcoin-logo{
-  position: relative;
-  left: 70%;
-  bottom: 30px;
-}
-.chip{
-  position: relative;
-  right: 10%;
-  bottom: 20px;
-}
-.card-number{
-  position: relative;
-  top: 60px;
-  right: 5%;
-  font-size: 29px;
-  word-spacing: 20px;
-}
-.cardholder{
-position: absolute;
-text-transform: uppercase;
-left: 28%;
-bottom: 23%;
-font-size: 12px;
-}
 .ninja{
   display: flex;
   justify-content: center;

@@ -1,21 +1,28 @@
 <template>
- <div>
-  <div class="bitcoin" v-bind="changeCard">
+ <div class="wrapper">
+ <div class="bitcoin" ref="bitcoin" v-bind="changeCard">
     <img class="chip" src="@/assets/chip-dark.svg">
     <img class="bitcoin-logo" src="@/assets/vendor-bitcoin.svg">
     <p class="card-number">1234 5435 4666 0931</p>
-    <p></p>
+    <p class="cardholder">cardholder name</p>
   </div>
- </div>   
+ </div>
 </template>
 
 <script>
 export default {
-    
+  name: 'Card',
+  data: () => {
+    return {}
+  }
 }
 </script>
 
 <style scoped>
+*{
+  padding: 0;
+  box-sizing: border-box;
+}
 .bitcoin{
   display: flex;
   justify-content: center;
@@ -45,5 +52,12 @@ export default {
   right: 5%;
   font-size: 29px;
   word-spacing: 20px;
+}
+.cardholder{
+position: absolute;
+text-transform: uppercase;
+left: 28%;
+bottom: 23%;
+font-size: 12px;
 }
 </style>
