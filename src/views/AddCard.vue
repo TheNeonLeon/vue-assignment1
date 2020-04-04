@@ -46,6 +46,7 @@ import CardStack from '../components/CardStack'
 import Top from '../components/Top' */
 
 export default {
+  name: 'AddCard',
   data: () => {
     return {
       number: '',
@@ -60,8 +61,6 @@ export default {
 
       }
     }
-  },
-  methods: {
   }
 }
 </script>

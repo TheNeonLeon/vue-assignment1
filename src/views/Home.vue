@@ -33,17 +33,14 @@ import Top from '../components/Top' */
 export default {
   name: 'Home',
   components: {
-    Top,
-    Card,
-    CardStack
+    Card
   },
   props: {
     CardStack: Object
   },
   data: () => {
     return {
-      card: {},
-      Cards: []
+      Card: []
     }
   },
   methods: {

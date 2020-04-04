@@ -1,4 +1,5 @@
 <template>
+<article v-bind:class="['card', vendor]" @click="clickCard()">
  <div class="wrapper">
  <div class="bitcoin" ref="bitcoin" v-bind="changeCard">
     <img class="chip" src="@/assets/chip-dark.svg">
@@ -7,13 +8,47 @@
     <p class="cardholder">cardholder name</p>
   </div>
  </div>
+</article>
 </template>
 
 <script>
 export default {
   name: 'Card',
   data: () => {
-    return {}
+    /* default inputs for card */
+    return {
+      defaultNumber: 'xxxx xxxx xxxx xxxx',
+      defaultName: 'Firstname Lastname',
+      defaultExpiration: 'MM/YY',
+      defaultVendor: '',
+      ccv: ''
+    }
+  },
+  props: {
+    card: Object
+  },
+  methods: {
+    clickCard () {
+      this.$emit('clickCard', this.card)
+    }
+  },
+  computed: {
+    number () {
+      if (!this.card.number) {
+        return this.defaultNumber
+      } else {
+        let cardNumber = this.card.number
+        cardNumber = cardNumber.match(/.{1,4}/g)
+        return cardNumber.join(' ')
+      }
+    },
+    name () {
+      if (!this.card.name) {
+        return this.defaultName
+      } else {
+        return this.card.name
+      }
+    }
   }
 }
 </script>
