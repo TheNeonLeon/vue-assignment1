@@ -1,39 +1,27 @@
 <template>
   <div class="home">
-   <!-- <img alt="Vue logo" src="../assets/logo.png">-->
-    <h1>E-WALLET</h1>
-    <p>Active card</p>
+    <top h1="E-Wallet" paragraph="Active Card"/>
   <div class="container">
-    <div class="ninja" ref="ninja" @click="changeCard">
-      <p class="card-number"></p>
-    </div>
-    <div class="block-chain" @click="changeCard">
-      <p class="card-number"></p>
-    </div>
-    <!-- implement this code in evil-corp v-for="variant in cardVariants" :key="variant.variantCard" @click="changeCard"-->
-    <div class="evil-corp">
-      <p class="card-number">6666 6666 6666 6666</p>
-    </div>
-  </div>
   <router-link to="/addcard">
     <button @click="addCard" class="add-card">
       ADD NEW CARD
   </button>
   </router-link>
   </div>
+  </div>
 </template>
 
 <script>
-import Card from '../components/Card'
-/* import CardStack from '../components/CardStack'
-import Top from '../components/Top' */
+// import Card from '../components/Card'
+// import CardStack from '../components/CardStack'
+import Top from '../components/Top'
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
   components: {
-    Card
+    Top
   },
   props: {
     CardStack: Object
