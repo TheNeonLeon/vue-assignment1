@@ -30,12 +30,12 @@ export default {
   },
   data: () => {
     return {
-      Card: []
+      CardStack: Object
     }
   },
   methods: {
-    changeCard () {
-      this.bitcoin.$emit('variantCard1')
+    changeCard (CardStack) {
+      this.CardStack = CardStack
     }
   }
 }
