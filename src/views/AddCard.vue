@@ -52,7 +52,8 @@ export default {
       number: '',
       name: '',
       expiration: '',
-      ccv: ''
+      ccv: '',
+      vendor: ''
     }
   },
   watch: {

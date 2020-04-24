@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <top h1="E-Wallet" paragraph="Active Card"/>
+    <card @allCards="changeCard" :Card="Card"/>
   <div class="container">
   <router-link to="/addcard">
     <button @click="addCard" class="add-card">
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-// import Card from '../components/Card'
+import Card from '../components/Card'
 // import CardStack from '../components/CardStack'
 import Top from '../components/Top'
 // @ is an alias to /src
@@ -21,10 +22,11 @@ import Top from '../components/Top'
 export default {
   name: 'Home',
   components: {
-    Top
+    Top,
+    Card
   },
   props: {
-    CardStack: Object
+    Card: []
   },
   data: () => {
     return {
