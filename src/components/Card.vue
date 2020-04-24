@@ -1,5 +1,5 @@
 <template>
-<article v-bind:class="['card', vendor]" @click="clickCard()">
+<article class="card" v-bind:class="['card', vendor]" @click="clickCard()">
  <div class="wrapper">
  <div class="bitcoin" ref="bitcoin" v-bind="changeCard">
     <img class="chip" src="@/assets/chip-dark.svg">
@@ -49,6 +49,20 @@ export default {
       } else {
         return this.card.name
       }
+    },
+    expiration () {
+      if (!this.card.expiration) {
+        return this.defaultExpiration
+      } else {
+        return this.card.expiration
+      }
+    },
+    vendor () {
+      if (!this.card.vendor) {
+        return this.defaultVendor
+      } else {
+        return this.card.vendor
+      }
     }
   }
 }
@@ -58,6 +72,13 @@ export default {
 *{
   padding: 0;
   box-sizing: border-box;
+}
+.card{
+    position: absolute;
+    width: 382px;
+    height: 241px;
+    left: 16px;
+    top: 150px;
 }
 .bitcoin{
   display: flex;
