@@ -2,8 +2,9 @@
 <article class="card" v-bind:class="['card', vendor]" @click="clickCard()">
  <div class="wrapper">
  <div class="bitcoin" ref="bitcoin" v-bind="changeCard">
-    <img class="chip" src="@/assets/chip-dark.svg">
+    <img class="chip" v-bind:src="require(`@/assets/chip-dark.svg`)">
     <img class="bitcoin-logo" src="@/assets/vendor-bitcoin.svg">
+
     <p class="card-number">{{number}}</p>
     <p class="cardholder">{{name}}</p>
     <p class="cardholder">{{expiration}}</p>
@@ -31,6 +32,7 @@ export default {
   methods: {
     clickCard () {
       this.$emit('clickCard', this.card)
+      console.log(this.card)
     }
   },
   computed: {

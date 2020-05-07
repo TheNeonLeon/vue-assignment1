@@ -4,14 +4,7 @@
 
 <script>
 export default {
-    data: () => {
-      return {
-      number: '',
-      name: '',
-      expiration: '',
-      ccv: ''
-      }
-    }
+    name: 'cardForm'
 }
 </script>
 
