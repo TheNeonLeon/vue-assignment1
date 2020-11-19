@@ -2,16 +2,8 @@
   <div class="home">
    <!-- <img alt="Vue logo" src="../assets/logo.png">-->
   <div class="container">
-    <div class="ninja" ref="ninja" @click="changeCard">
-      <p class="card-number"></p>
-    </div>
-    <div class="block-chain" @click="changeCard">
-      <p class="card-number"></p>
-    </div>
-    <!-- implement this code in evil-corp v-for="variant in cardVariants" :key="variant.variantCard" @click="changeCard"-->
-    <div class="evil-corp">
-      <p class="card-number">6666 6666 6666 6666</p>
-    </div>
+  <li id="card-stack" v-for="card in CardStack" :key="card">
+  </li>
   </div>
   <router-link to="/addcard">
     <button @click="addCard" class="add-card">
@@ -22,7 +14,7 @@
 </template>
 
 <script>
-import Card from '../components/Card'
+import Card from '../components/CardStack.vue'
 /* import CardStack from '../components/CardStack'
 import Top from '../components/Top' */
 // @ is an alias to /src
@@ -33,12 +25,9 @@ export default {
   components: {
     Card
   },
-  props: {
-    CardStack: Object
-  },
   data: () => {
     return {
-      Card: []
+      CardStack: this.CardStack
     }
   },
   methods: {

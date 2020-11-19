@@ -4,7 +4,18 @@
 
 <script>
 export default {
-    name: 'CardStack'
+    name: 'CardStack',
+
+    data: () => {
+        return{
+            CardStack: {
+                Evil: "Evil corp",
+                Block: "Block chain inc",
+                Ninja: "Ninja Bank",
+                Bitcoin: "Bitcoin inc"
+            }
+        }
+    }
 }
 </script>
 
