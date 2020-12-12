@@ -1,7 +1,7 @@
 <template>
     <header>
         <h1 class="title"> {{ h1 }} </h1>
-        <h4 class="new-card-title"> {{ h4 }} </h4>
+        <h5 class="new-card-title"> {{ h5 }} </h5>
     </header>
 </template>
 
@@ -10,7 +10,7 @@ export default {
     name: "Top",
     props: {
         h1: String,
-        h4: String
+        h5: String
     }
 }
 </script>
