@@ -5,14 +5,14 @@
         h1="E-WALLET" 
         h5="ACTIVE CARD" />
       <card 
-        @allCards="activateCard"
+        @allCards="pushCard"
         :card="card"
       />
     </div>
     <div>
       <CardStack 
         v-bind:allCards="cards"
-        @activateCard="activateCard"/>
+        @pushCard="pushCard"/>
     </div>
     <div>
       <button class="add-new-card-btn" @click="addCard">
@@ -45,7 +45,7 @@ export default {
     addCard() {
       this.$router.push('/AddCard')
     },
-    activateCard(card) {
+    pushCard(card) {
       this.card = card
     }
   }
