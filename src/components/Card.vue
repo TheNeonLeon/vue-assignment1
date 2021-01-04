@@ -6,12 +6,12 @@
     </div>
 
     <div>
-      <p class="cardnumber"> {{ cardnumber }} </p>
+      <p class="cardnumber"> {{ number }} </p>
     </div>
 
     <div>
       <p class="cardholder-text">Cardholder Name</p>
-      <p class="cardholder"> {{ cardholder }} </p>
+      <p class="cardholder"> {{ holder }} </p>
     </div>
 
     <div>
@@ -36,7 +36,7 @@ export default {
     };
   },
   computed: {
-    cardnumber() {
+    number() {
       if (!this.card.cardnumber) {
         return this.defaultNumber;
       } else {
@@ -45,7 +45,7 @@ export default {
         return number.join(' ');
       }
     },
-    cardholder() {
+    holder() {
       if (!this.card.cardholder) {
         return this.defaultHolder;
       } else {
