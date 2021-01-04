@@ -1,11 +1,7 @@
 <template>
-    <section class="stack">
+    <section class="card-stack">
         <div class="cards" v-for="(card, index) in allCards" v-bind:key="index">
-            <card 
-              class="card" 
-              v-bind:card="card"
-              @pushCard="pushCard"
-            />
+            <card class="card" v-bind:card="card" @pushCard="pushCard" />
         </div>
     </section>
 </template>
@@ -29,15 +25,19 @@ export default {
 </script>
 
 <style scoped>
-  .stack {
+  .card-stack {
     position: absolute;
     left: 5px;
     top: 300px;
+  }
+   .card {
+    cursor: pointer;
   }
   .cards {
     height: 4rem;
     overflow: visible;
     position: relative;
+    left: 45px;
        
   }
   .cards:hover{
@@ -46,7 +46,5 @@ export default {
     -webkit-transition:all 0.2s ease-in-out;
 
   }
-  .card {
-    cursor: pointer;
-  }
+ 
 </style>
