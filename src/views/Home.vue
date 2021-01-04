@@ -54,6 +54,7 @@ export default {
 
 <style scoped>
   .add-new-card-btn {
+    position: absolute;
     border: 2px solid #000000;
     border-radius: 5%;
     padding: 1%;
@@ -64,5 +65,11 @@ export default {
     text-transform: uppercase;
     color: #000000;
     cursor: pointer;
+    height: 80px;
+width: 382px;
+left: 450px;
+top: 799px;
+border-radius: 8px;
+
   }
 </style>
