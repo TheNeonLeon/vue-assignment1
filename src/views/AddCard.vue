@@ -2,7 +2,7 @@
   <div>
     <Top  h1="ADD A NEW BANK CARD" h5="NEW CARD"/>
     <Card v-bind:card="card"/>
-    <CardForm v-on:updateCard="updateCard"/>
+    <CardForm v-on:changeCard="changeCard"/>
     <div>
       <button class="add-card" @click="addCard">ADD CARD</button>
       <button class="home-btn" @click="home"> HOME</button>
@@ -35,7 +35,7 @@ export default {
         this.$emit('card', this.card);
         this.$router.push("/");
     },
-    updateCard(input) {
+    changeCard(input) {
       this.card = input;
     }
   }
@@ -46,23 +46,27 @@ export default {
   .add-card {
     position: absolute;
     height: 72px;
-    left: 16px;
-    top: 808px;
-    padding: 5%;
+    left: 400px;
+    top: 900px;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
     background: #000000;
-    border-radius: 10%;
+    border-radius: 5%;
     color: #FFFFFF;
     cursor: pointer;
   }
   .home-btn{
     position: absolute;
     height: 72px;
-    left: 150px;
-    top: 808px;
-    padding: 5%;
+    left: 700px;
+    top: 900px;
+    padding: 2%;
+        padding-left: 5%;
+    padding-right: 5%;
     color: #FFFFFF;
     background: #000000;
-    border-radius: 10%; 
+    border-radius: 5%; 
     cursor: pointer;
   }
 </style>

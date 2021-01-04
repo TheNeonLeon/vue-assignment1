@@ -1,7 +1,7 @@
 <template>
     <header>
-        <h1 class="title"> {{ h1 }} </h1>
-        <h5 class="new-card-title"> {{ h5 }} </h5>
+        <h1 class="heading"> {{ h1 }} </h1>
+        <h5 class="new-card-heading"> {{ h5 }} </h5>
     </header>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-  .title {
+  .heading {
     color: #222222;
     font-weight: bold;
     display: flex;
@@ -26,7 +26,7 @@ export default {
     text-transform: uppercase;
   }
   
-  .new-card-title {
+  .new-card-heading {
     color: rgba(131, 131, 131, 0.6);
     display: flex;
     justify-content: center;

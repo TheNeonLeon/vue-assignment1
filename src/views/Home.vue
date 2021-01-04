@@ -15,9 +15,7 @@
         @pushCard="pushCard"/>
     </div>
     <div>
-      <button class="add-new-card-btn" @click="addCard">
-        ADD CARD
-      </button>
+      <button class="add-new-card" @click="addCard">ADD CARD</button>
     </div>
   </div>
 </template>
@@ -53,7 +51,7 @@ export default {
 </script>
 
 <style scoped>
-  .add-new-card-btn {
+  .add-new-card {
     position: absolute;
     border: 2px solid #000000;
     border-radius: 5%;
