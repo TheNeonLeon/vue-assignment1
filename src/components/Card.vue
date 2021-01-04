@@ -113,17 +113,17 @@ export default {
   }
   .bitcoin {
     background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)), #FFAE34;
-    border-radius: 8px;
+    border-radius: 2px;
     color: #000000;
   }
   .ninja {
     background: linear-gradient( rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)), #222222;
-    border-radius: 8px;
+    border-radius: 2px;
     color: #FFFFFF;
   }
   .blockchain {
     background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0) 100%), #8B58F9;
-    border-radius: 8px;
+    border-radius: 2px;
     color: #000000;
   }
   .evil {

@@ -30,9 +30,7 @@ export default {
     left: 5px;
     top: 300px;
   }
-   .card {
-    cursor: pointer;
-  }
+  
   .cards {
     height: 4rem;
     overflow: visible;
