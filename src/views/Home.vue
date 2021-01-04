@@ -1,105 +1,73 @@
 <template>
-  <div class="home">
-    <top h1="E-Wallet" paragraph="Active Card"/>
-    <card @allCards="changeCard" :Card="Card"/>
-  <div class="container">
-  <router-link to="/addcard">
-    <button @click="addCard" class="add-card">
-      ADD NEW CARD
-  </button>
-  </router-link>
-  </div>
+  <div>
+    <div>
+      <top 
+        h1="E-WALLET" 
+        h5="ACTIVE CARD" />
+      <card 
+        @allCards="pushCard"
+        :card="card"
+      />
+    </div>
+    <div>
+      <CardStack 
+        v-bind:allCards="cards"
+        @pushCard="pushCard"/>
+    </div>
+    <div>
+      <button class="add-new-card" @click="addCard">ADD CARD</button>
+    </div>
   </div>
 </template>
 
 <script>
-import Card from '../components/Card'
-// import CardStack from '../components/CardStack'
-import Top from '../components/Top'
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
+import top from "../components/Top";
+import card from "../components/Card";
+import CardStack from "../components/CardStack";
 export default {
-  name: 'Home',
+  name: "Cards",
   components: {
-    Top,
-    Card
-  },
-  props: {
-    Card: []
+    top,
+    card,
+    CardStack,
   },
   data: () => {
     return {
-      CardStack: Object
-    }
+      card: {}
+    };
+  },
+  props: {
+    cards: Array
   },
   methods: {
-    changeCard (CardStack) {
-      this.CardStack = CardStack
+    addCard() {
+      this.$router.push('/AddCard')
+    },
+    pushCard(card) {
+      this.card = card
     }
   }
 }
 </script>
+
 <style scoped>
-.ninja{
+  .add-new-card {
+    position: absolute;
+    border: 2px solid #000000;
+    border-radius: 5%;
+    padding: 1%;
+  text-align: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  border-style: solid;
-  border-color: black;
-  padding: 5%;
-  background-color: black;
-  border-radius: 8px;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 8%;
-  padding-bottom: 15%;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-  z-index: -1;
-}
-.block-chain{
-  display: flex;
-  justify-content: center;
-  border-style: solid;
-  border-color: blue;
-  padding: 5%;
-  background-color: blue;
-  border-radius: 8px;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: -15%;
-  padding-bottom: 15%;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-  z-index: 1;
-}
-.evil-corp{
-  display: flex;
-  justify-content: center;
-  border-style: solid;
-  border-color: red;
-  padding: 5%;
-  background-color: red;
-  border-radius: 8px;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: -15%;
-  padding-bottom: 15%;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-  z-index: 2;
-}
-/*Hover effects on cards*/
-.bitcoin:hover, .evil-corp:hover, .block-chain:hover, .ninja:hover{
-transform: translateY(-35px);
-transition: all 0.5s ease;
-}
-.add-card{
-  margin-top: 10%;
-  border-style: solid;
-  border-color: black;
-  border-radius: 8px;
-  background-color: white;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-right: 10%;
-  padding-left: 10%;
-}
+    text-transform: uppercase;
+    color: #000000;
+    cursor: pointer;
+    height: 80px;
+width: 382px;
+left: 450px;
+top: 799px;
+border-radius: 8px;
+
+  }
 </style>
