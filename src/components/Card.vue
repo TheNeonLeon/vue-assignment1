@@ -1,7 +1,7 @@
 <template>
   <article class="card" v-on:click="pushCard()" v-bind:class="['card', vendor, chip]">
     <div>
-      <img class="chip-pic" v-bind:src="require(`../assets/chip-${chip}.svg`)">
+      <img class="chip-pic" v-bind:src="require(`../assets/chip-light.svg`)">
       <img class="vendor-pic" v-bind:src="require(`../assets/vendor-${vendor}.svg`)">
     </div>
 

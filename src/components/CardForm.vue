@@ -2,6 +2,14 @@
   <div v-on:input="changeCard">
 
 <form>
+    <label class="vendor" for="vendor"> Vendor</label>
+    <select class="vendor-input-field" v-model="vendor" name="vendor">
+      <option value="bitcoin">Bitcoin</option>
+      <option value="ninja">Ninja</option>
+      <option value="blockchain">Block Chain</option>
+      <option value="evil">Evil Corp</option>
+    </select>
+    
     <label class="cardnumber" for="cardnumber">Card Number</label>
     <input class="cardnumber-input-field" v-model="cardnumber" type="text" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="16"/>
 
@@ -13,14 +21,6 @@
     
     <label class="ccv" for="ccv">CCV</label>
     <input class="ccv-input-field" v-model="ccv" type="text" name="ccv" placeholder="xxx" maxlength="3"/>
-
-        <label class="vendor" for="vendor"> Vendor</label>
-    <select class="vendor-input-field" v-model="vendor" name="vendor">
-      <option value="bitcoin">Bitcoin</option>
-      <option value="ninja">Ninja</option>
-      <option value="blockchain">Block Chain</option>
-      <option value="evil">Evil Corp</option>
-    </select>
 </form>
   </div>
 </template>
@@ -141,7 +141,7 @@ export default {
     width: 382px;
     height: 22px;
     left: 400px;
-    top: 780px;
+    top: 400px;
     line-height: 13px;
     text-transform: uppercase;
     color: black;
@@ -151,7 +151,7 @@ export default {
     width: 382px;
     height: 56px;
     left: 400px;
-    top: 800px;
+    top: 450px;
     border: 1px solid black;
     border-radius: 3px;
   }
